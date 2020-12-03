@@ -1,0 +1,214 @@
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	color: white;
+	font-family: "Calibri Light";
+	background: #ddd;
+}
+
+/* Common templates */
+.btn:focus {
+	box-shadow: unset;
+}
+.modal {
+	color: black;
+}
+tr td {
+	height: 20px;
+}
+.table-def thead tr {
+	background: #777;
+}
+.table-def tbody tr {
+	background: #888;
+	cursor: pointer;
+}
+.table-def tfoot tr {
+	background: #777;
+}
+.badge-success {
+	background: green;
+	border-radius: 10px;
+}
+.modal-header, .modal-footer {
+  background: #777;
+}
+
+/* User Page Templates */
+.page {
+	height: 100%;
+	width: 100%;
+}
+.page-header {
+	height: 50px;
+	width: 100%;
+	background: #999;
+	position: fixed;
+	border-bottom: 1px solid #4b4b4b;
+	z-index: 100;
+}
+.page-brand {
+	line-height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 50px;
+	font-family: 'Montserrat', sans-serif;
+}
+.nav-btn {
+	display: none;
+}
+.page-body {
+	height: calc(100% - 50px);
+	width: 100%;
+}
+.page-nav {
+	position: absolute;
+	height: calc(100% - 50px);
+	width: 300px;
+	background: #666;
+	bottom: 0;
+	left: 0;
+	border-right: 1px solid #4b4b4b;
+	transition: width .5s;
+}
+.user-profile {
+	overflow: hidden;
+	height: 200px;
+	width: 100%;
+	border-bottom: 1px solid white;
+}
+.profile img {
+	margin: 0px 95px;
+	width: 120px;
+	height: 150px;
+}
+.user-profile p {
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+.nav-items {
+	height: 50px;
+	width: 100%;
+	display: flex;
+	white-space: nowrap;
+	overflow: hidden;
+	color: white;
+	transition: background .3s;
+}
+.nav-items:hover {
+	background: #3072ff;
+	color: white;
+	text-decoration: none;
+}
+.nav-icons {
+	height: 50px;
+	width: 50px;
+	font-size: 20px;
+	padding-top: 8px;
+	text-align: center;
+	float: left;
+}
+.nav-name {
+	font-size: 18px;
+	width: calc(100% - 50px);
+	line-height: 50px;
+	font-weight: bold;
+}
+.page-copyright {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	font-size: 15px;
+	text-align: center;
+	overflow: hidden;
+	text-decoration: unset;
+	border-top: 1px solid white;
+}
+.page-content {
+	position: absolute;
+	top: 0px;
+	bottom: 0;
+	left: 0;
+	width: calc(100% - 300px);
+	height: 100%;
+	margin-left: 300px;
+	padding-top: 80px;
+	transition: width .5s;
+	overflow: auto;
+	color: black;
+}
+
+div.scrollable-table {
+    display: inline-block;
+    height: 500px;
+    width: 100%;
+    overflow: auto;
+}
+
+div.scrollable-table thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: inherit;
+    border-top: 1px solid #4b4b4b;
+    border-bottom: 1px solid #4b4b4b;
+}
+
+/* Responsive Breakpoints */
+/* Mobile Version */
+@media (max-width: 576px) {
+	body {
+		overflow-y: auto;
+	}
+	.page-header {
+		background: #999;
+	}
+	.page-brand {
+		padding-left: 20px;
+	}
+	.page-nav {
+		position: absolute;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		width: 0;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		top: 50px;
+		background: rgba(60,63,65,.9);
+		overflow: hidden;
+	}
+	.nav-hidden.page-nav {
+		width: 250px;
+	}
+	.page-content {
+		width: 100%;
+	        padding-top: 60px;
+		padding-bottom: 0;
+		margin-bottom: 0;
+		color: black;
+		margin-left: 0;
+		overflow: auto;
+	}
+	.nav-btn {
+		display: unset;
+		float: right;
+		position: absolute;
+		height: 30px;
+		width: 50px;
+		top: 10px;
+		right: 0;
+		margin-right: 15px;
+	}
+	.nav-btn i {
+	  position: relative;
+	  top: -8px;
+	}
+	.profile img {
+		margin: 0px 75px;
+	}
+}
