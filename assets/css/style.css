@@ -17,20 +17,80 @@ body {
 	background: #ddd;
 }
 
-.card {
-	margin-top: 40px;
-	margin-bottom: 20px;
-	width: 60%;
+.form-control {
+	border: 0;
+	background: #313131;
+	color: white !important;
+}
+
+.form-control:focus {
+	box-shadow: unset;
+	background: #313131;
+	border: 1px solid yellow;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.btn:focus {
+	box-shadow: unset;
+}
+
+.box {
+	height: 500px;
+	width: 500px;
+	margin-top: 10vh;
+	margin-left: 400px;
+	background: rgb(138, 135, 135);
+	border-radius: 10px;
+	box-shadow: 7px 10px 8px #5c5b5b;
+	border-bottom: 10px solid #cccccc;
+}
+
+.box-header {
+	height: 150px;
+	width: 100%;
+	position: relative;
+	border-bottom: 1px solid white;
+}
+
+.logo {
+	position: relative;
+	background-image: url(../img/logo.jpg);
+	background-size: cover;
+	top: 10px;
+	height: 70%;
+	width: 100%;
+}
+
+.box-title {
+	position: relative;
+	top: 10px;
+}
+
+.box-body {
+	position: relative;
+	height: 250px;
+	border-bottom: 1px solid white;
+}
+
+.box-body label {
+	padding-top: 10px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.button-group {
+	text-align: center;
+	padding-top: 20px;
 }
 
 @media (max-width: 576px) {
-	.card {
-		margin-top: 10%;
+	.box {
 		width: 100%;
-		margin-bottom: 20px;
-	}
-	.container {
-	    margin: 0;
-	    padding: 0;
+		height: 500px;
+		margin-left: 0;
+		border-radius: 0;
 	}
 }

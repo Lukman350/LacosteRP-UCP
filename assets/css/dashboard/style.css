@@ -102,6 +102,10 @@ tr td {
 	color: white;
 	text-decoration: none;
 }
+.active {
+	background: #0045f5;
+	cursor: default;
+}
 .nav-icons {
 	height: 50px;
 	width: 50px;

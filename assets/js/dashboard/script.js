@@ -8,3 +8,13 @@ btn.addEventListener('click', function(){
 		pageNav.classList.add('nav-hidden');
 	}
 });
+
+const navItems = document.querySelectorAll(".nav-items");
+
+navItems.addEventListener('click', function (e) {
+	if (navItems.classList.contains('active')) {
+		navItems.classList.remove('active');
+	} else {
+		navItems.classList.add('active');
+	}
+})

@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#form-register").submit(function(e){
         const btn = document.getElementById('submit');
         btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
         $.ajax({
             url: "scripts/register.php",
             type: "POST",
@@ -11,6 +12,7 @@ $(document).ready(function(){
                 if (parseInt(data.status) == 0) {
                     swal('Registration Failed', data.message, 'error').then(function(){
                         btn.disabled = false;
+                        btn.innerHTML = 'Register';
                     });
                 } else if (parseInt(data.status) == 1) {
                     btn.disabled = true;
