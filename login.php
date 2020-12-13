@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_POST["user"]))
+if (isset($_SESSION["user"]))
     return header("Location: ./dashboard/index");
 ?>
 <!DOCTYPE html>
