@@ -14,7 +14,8 @@ $(document).ready(function(){
 
     $("#form-forgotpass").submit(function(e){
         const btnPass = document.getElementById('btnpass');
-        btnPass.disabled = 'disabled';
+        btnPass.disabled = true;
+        btnPass.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
         $.ajax({
             url: "scripts/forgot.php",
             type: "POST",
@@ -28,6 +29,7 @@ $(document).ready(function(){
                 } else if (parseInt(data.status) == 0) {
                     swal('Forgot Password', data.message, 'error');
                     btnPass.disabled = false;
+                    btnPass.innerHTML = 'Submit';
                 }
             }
         });
@@ -36,7 +38,8 @@ $(document).ready(function(){
 
     $("#form-forgotuser").submit(function(e){
         const btnUser = document.getElementById('btnuser');
-        btnUser.disabled = 'disabled';
+        btnUser.disabled = true;
+        btnUser.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
         $.ajax({
             url: "scripts/forgot.php",
             type: "POST",
@@ -50,6 +53,7 @@ $(document).ready(function(){
                 } else if (parseInt(data.status) == 0) {
                     swal('Forgot Username', data.message, 'error');
                     btnUser.disabled = false;
+                    btnUser.innerHTML = 'Submit';
                 }
             }
         });
