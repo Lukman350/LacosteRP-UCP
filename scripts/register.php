@@ -64,4 +64,3 @@ if (isset($_POST["e-mail"]) && isset($_POST["pname"])) {
 }
 
 die(json_encode($response));
-// }
