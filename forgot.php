@@ -49,7 +49,7 @@ if ($page == "pass" && $code) :
             </div>
             <input type="hidden" name="code" value="<?= $code; ?>">
             <div class="form-group">
-              <button type="submit" class="btn btn-success">Reset</button>
+              <button type="submit" class="btn btn-success" id="reset-pass">Reset</button>
             </div>
           </form>
         </div>
@@ -151,8 +151,8 @@ if ($page == "pass" && $code) :
         <div class="modal-body">
           <p>
             Jika Anda lupa email akun Anda lakukan hal dibawah ini:<br>
-            <li>Jika Anda masih bisa login ke Ingame silahkan gunakan command '/stats' untuk melihat email akun Anda.</li>
-            <li>Jika Anda sudah tidak bisa Ingame, silahkan kontak salah satu Admin kami. Bisa melalui Discord atau Forum.</li>
+            <li style="list-style: none;margin-left: 10px;">Jika Anda masih bisa login ke Ingame silahkan gunakan command '/stats' untuk melihat email akun Anda.</li>
+            <li style="list-style: none;margin-left: 10px;">Jika Anda sudah tidak bisa Ingame, silahkan kontak salah satu Admin kami. Bisa melalui Discord atau Forum.</li>
           </p>
         </div>
         <div class="modal-footer">
