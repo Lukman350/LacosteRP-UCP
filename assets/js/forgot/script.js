@@ -61,6 +61,9 @@ $(document).ready(function(){
     });
 
     $("#reset-password").submit(function(e){
+        const btnReset = document.getElementById('reset-pass');
+        btnReset.disabled = true;
+        btnReset.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...';
         $.ajax({
             url: "scripts/forgot.php",
             type: "POST",
@@ -73,6 +76,8 @@ $(document).ready(function(){
                     });
                 } else if (parseInt(data.status) == 0) {
                     swal('Reset Password', data.message, 'error');
+                    btnReset.disabled = false;
+                    btnReset.innerHTML = 'Reset';
                 }
             }
         });
