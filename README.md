@@ -6,6 +6,7 @@ User Control Panel of server Lacoste Roleplay. Dibuat untuk pembelajaran dan ber
 - JQuery
 - Bootstrap
 - HTML
+- Sweetalert2
 
 ## How to use
 - Pertama clone atau download repository ini.
