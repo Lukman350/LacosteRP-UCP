@@ -162,7 +162,7 @@ div.scrollable-table thead {
 /* Mobile Version */
 @media (max-width: 576px) {
 	body {
-		overflow-y: auto;
+		overflow: auto;
 	}
 	.page-header {
 		background: #999;
