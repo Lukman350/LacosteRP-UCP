@@ -1,11 +1,17 @@
 <?php
 
+/*
+ * DATABASE CLASS
+ * Created by: lukman
+ * Configure your mysql database below:
+ **/
+
 class Database
 {
-    private $host = "localhost";
-    private $user = "root";
-    private $pass = "";
-    private $dbname = "ucp";
+    private $host = "localhost"; // Masukkan host dari mysql Anda (default: localhost)
+    private $user = "root"; // Masukkan user mysql Anda (default: root)
+    private $pass = ""; // Password mysql Anda (default: kosong)
+    private $dbname = "ucp"; // Nama database mysql Anda (default: ucp)
     public $db;
 
     public function __construct()
