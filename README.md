@@ -10,7 +10,7 @@ User Control Panel of server Lacoste Roleplay. Dibuat untuk pembelajaran dan ber
 
 ## How to use
 - Pertama clone atau download repository ini.
-```sh
+```bash
 git clone https://github.com/Lukman350/LacosteRP-UCP.git
 ```
 - Kedua install xampp terlebih dahulu.
