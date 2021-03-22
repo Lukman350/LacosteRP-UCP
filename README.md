@@ -17,6 +17,6 @@ git clone https://github.com/Lukman350/LacosteRP-UCP.git
 - Setelah install masukkan repository ini ke folder `xampp/htdocs`
 - Lalu jalankan Apache di XAMPP Control Panel.
 - Jangan lupa jalankan juga MySQL nya.
-- Buka file db.php di folder db
+- Buka file `db.php` di folder db
 - Silahkan konfigurasi database mysql punya kalian di class Database.
 - Setelah itu buka browser kalian dan masukkan url `http://localhost` dan pilih folder repository ini.
