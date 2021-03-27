@@ -1,5 +1,6 @@
 <?php 
-include_once "../db/db.php";
+include_once "../config/db.php";
+include_once "../config/email.php";
 $conn = new Database;
 
 $response = [];
@@ -15,7 +16,25 @@ if (isset($_POST["username"]) && isset($_POST["email"])) {
     $query = $conn->db->prepare("SELECT * FROM players WHERE username = '$username' AND email = '$email'");
     $query->execute();
     if ($query->rowCount() > 0) {
-        include_once "../vendor/send-pass.php";
+        $pesan = "
+            <p>To: <br>Username: <b>$username</b><br><br>
+                Please click link in the below to reset your password:<br><br>
+                <a href='https://ucp.lacosteroleplay.com/forgot?page=pass&c=".urlencode($kode)."'>
+                    https://ucp.lacosteroleplay.com/forgot?page=pass&c=".urlencode($kode)."
+                </a><br><br>
+                Best Regards,<br><br><br><i>LC:RP Management</i><br><br>
+                <i style='text-align:center'>Copyright © Lacoste Roleplay 2020.</i>
+            </p>
+        ";
+        if (sendEmail('LC:RP Reset Password', $email, $username, $pesan)) {
+            $sql = $conn->db->prepare("UPDATE players SET kode = '$kode' WHERE username = '$username' AND email = '$email'");
+            $sql->execute();
+            $response["status"] = 1;
+            $response["message"] = 'Request reset password has been send! Please check your email to reset your password.';
+        } else {
+            $response["status"] = 0;
+            $response["message"] = 'Something went wrong, email reset password not send! Please try again.';
+        }
     } else {
         $response["status"] = 0;
         $response["message"] = 'This username and email was not found!';
@@ -57,7 +76,20 @@ if (isset($_POST["mail"])) {
     $query->execute();
     if ($query->rowCount() > 0) {
         $data = $query->fetch(PDO::FETCH_ASSOC);
-        include_once "../vendor/send-user.php";
+        $pesan = "
+            <p>To: <br>Email: <b>".$mailer."</b><br><br>
+                Your account username is: <b>".$nama_penerima."</b><br><br>
+                Best Regards,<br><br><br><i>LC:RP Management</i><br><br>
+                <i style='text-align:center'>Copyright © Lacoste Roleplay 2020.</i>
+            </p>
+        ";
+        if (sendEmail('LC:RP Forgot Username', $mailer, $data['username'], $pesan)) {
+            $response["status"] = 1;
+            $response["message"] = 'Request forgot username has been send! Please check your email.';
+        } else {
+            $response["status"] = 0;
+            $response["message"] = 'Something went wrong, email forgot username not send! Please try again.';
+        }
     } else {
         $response["status"] = 0;
         $response["message"] = "This email was not found!";
