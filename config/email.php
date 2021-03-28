@@ -1,12 +1,12 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 
-function sendEmail($subjek, $email_penerima, $nama_penerima, $pesan) {
-  // Include librari phpmailer
-  include('../vendor/phpmailer/Exception.php');
-  include('../vendor/phpmailer/PHPMailer.php');
-  include('../vendor/phpmailer/SMTP.php');
+// Include librari phpmailer
+include('../vendor/phpmailer/Exception.php');
+include('../vendor/phpmailer/PHPMailer.php');
+include('../vendor/phpmailer/SMTP.php');
 
+function sendEmail($subjek, $email_penerima, $nama_penerima, $pesan) {
   $email_pengirim = 'email@example.com'; // Isikan dengan email pengirim
   $nama_pengirim = 'Lacoste Roleplay'; // Isikan dengan nama pengirim
 
